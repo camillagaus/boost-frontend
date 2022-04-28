@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "nuxi dev",
     "build": "nuxi build",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "dev:host": "nuxt --hostname '0' --port 8000"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^5.0.2",
