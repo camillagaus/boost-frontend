@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "nuxi dev",
+    "build": "nuxi build",
+    "start": "node .output/server/index.mjs"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^5.0.2",
+    "nuxt3": "3.0.0-27501460.04a72f8"
+  },
+  "dependencies": {
+    "@vueform/toggle": "^2.0.1"
+  }
+}
