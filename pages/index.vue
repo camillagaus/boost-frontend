@@ -41,7 +41,7 @@ definePageMeta({
         <div class="h-20 bg-slate-400 flex justify-center items-center">
             <div class="mx-4" v-for="allergy in allergies">
                 <span class="mr-2"> {{ allergy }} </span>
-                <Toggle v-model=filter />
+                <Toggle />
             </div>
             <span>Vegetariskt: </span>
              <Toggle v-model="filter.vegetarian" />
