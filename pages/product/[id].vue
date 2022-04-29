@@ -4,7 +4,7 @@
 
 const route = useRoute(); 
 
-const { data: product } = await useFetch(`/api/product/${route.params.id}`)
+const { data: product } = await useFetch(`https://boost-backend-camilla.herokuapp.com/food-items/${route.params.id}`)
 
 definePageMeta({
     middleware: ["logger", "auth"]

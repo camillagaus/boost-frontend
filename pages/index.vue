@@ -3,7 +3,7 @@ import Toggle from '@vueform/toggle'
 
 // useFetch returnerar en variabel data, som vi döper om till products direkt i fetchen 
 // i Form: när eventet added emittas från child component plockar parent (index.js) upp det och kör en metod (refresh)
-const { data: products, refresh } = await useFetch("/api/products")
+const { data: products, refresh } = await useFetch("https://boost-backend-camilla.herokuapp.com/food-items")
 
 // nuxt 2 har två metoder i Options API för datahämtning, fetch och asyncData, dessa kan a användas på 
 // components i pages. asyncData kommer mergas in i ens data() i script. 
@@ -11,6 +11,7 @@ const { data: products, refresh } = await useFetch("/api/products")
 // För nuxt 3 composition API finns useFetch och useAsyncData och useLazyFetch och useLazyAsyncData
 
 const filter = ref({})
+
 
 const filteredProducts = computed(() => {
     // vi vill hämta en ny lista baserat på våra filters 
@@ -41,7 +42,7 @@ definePageMeta({
         <div class="h-20 bg-slate-400 flex justify-center items-center">
             <div class="mx-4" v-for="allergy in allergies">
                 <span class="mr-2"> {{ allergy }} </span>
-                <Toggle />
+                <Toggle v-model="filter[allergy.toLowerCase()]"/>
             </div>
             <span>Vegetariskt: </span>
              <Toggle v-model="filter.vegetarian" />

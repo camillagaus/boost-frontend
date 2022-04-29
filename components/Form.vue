@@ -29,7 +29,7 @@ const submitHandler = async () => {
     }
 
     try {
-        await useFetch("/api/products", { method: "post", body: productData }) 
+        await useFetch("https://boost-backend-camilla.herokuapp.com/food-items", { method: "post", body: productData }) 
         // här emittar vi själva eventet, så får parent plocka upp det 
         emit("added")
         formData.value = {}

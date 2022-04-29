@@ -16,17 +16,14 @@ const emit = defineEmits(["deleted"])
 // fil, så addToCart hämtar man ut "importerar"
 const { addToCart } = useCart()
 
-const addToList = () => {
-    
+const addToList = () => {  
     addToCart(props.product)
 }
 
-const removeFromList =  () => {
+const removeFromList = async () => {
     console.log('removeFromList', props.product.id)
-    useFetch(`/api/products`, { method: "delete", body: props.product.id }) 
+    await useFetch(`https://boost-backend-camilla.herokuapp.com/food-items/${props.product.id}`, { method: "delete" }) 
     emit("deleted")
-
-
 }
 
 </script>
